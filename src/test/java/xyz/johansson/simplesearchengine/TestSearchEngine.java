@@ -5,7 +5,7 @@ import org.junit.Test;
 
 import java.util.List;
 
-public class TestSearchIndex {
+public class TestSearchEngine {
 
     @Test
     public void testResultOrder() {
