@@ -1,10 +1,13 @@
 package xyz.johansson.simplesearchengine;
 
+import com.google.inject.Singleton;
+
 import java.util.*;
 
 /**
  * Handles indexing for SearchEngine.
  */
+@Singleton
 public class Indexer {
 
     // inverted index: word -> {titles}

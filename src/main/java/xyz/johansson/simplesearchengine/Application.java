@@ -1,5 +1,8 @@
 package xyz.johansson.simplesearchengine;
 
+import com.google.inject.Guice;
+import com.google.inject.Injector;
+
 public class Application {
 
     /**
@@ -8,8 +11,8 @@ public class Application {
      * @param args not used
      */
     public static void main(String[] args) {
-        Indexer indexer = new Indexer();
-        SearchEngine searchEngine = new SearchEngine(indexer);
-        new CLI(indexer, searchEngine).run();
+        Injector injector = Guice.createInjector();
+        CLI cli = injector.getInstance(CLI.class);
+        cli.run();
     }
 }

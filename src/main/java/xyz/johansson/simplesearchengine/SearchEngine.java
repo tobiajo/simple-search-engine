@@ -1,10 +1,14 @@
 package xyz.johansson.simplesearchengine;
 
+import com.google.inject.Inject;
+import com.google.inject.Singleton;
+
 import java.util.*;
 
 /**
  * Class that handles search queries.
  */
+@Singleton
 public class SearchEngine {
 
     private Indexer indexer;
@@ -14,6 +18,7 @@ public class SearchEngine {
      *
      * @param indexer search engine indexer
      */
+    @Inject
     public SearchEngine(Indexer indexer) {
         this.indexer = indexer;
     }

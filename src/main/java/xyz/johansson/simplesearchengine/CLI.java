@@ -1,5 +1,8 @@
 package xyz.johansson.simplesearchengine;
 
+import com.google.inject.Inject;
+import com.google.inject.Singleton;
+
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -10,6 +13,7 @@ import java.util.Scanner;
 /**
  * Provides a command line user interface for Simple search engine.
  */
+@Singleton
 public class CLI {
 
     private Indexer indexer;
@@ -20,6 +24,7 @@ public class CLI {
     /**
      * Constructor, sets up Indexer and SearchEngine.
      */
+    @Inject
     public CLI(Indexer indexer, SearchEngine searchEngine) {
         this.indexer = indexer;
         this.searchEngine = searchEngine;
