@@ -20,9 +20,9 @@ public class CLI {
     /**
      * Constructor, sets up Indexer and SearchEngine.
      */
-    public CLI() {
-        indexer = new Indexer();
-        searchEngine = new SearchEngine(indexer);
+    public CLI(Indexer indexer, SearchEngine searchEngine) {
+        this.indexer = indexer;
+        this.searchEngine = searchEngine;
     }
 
     /**
@@ -123,14 +123,5 @@ public class CLI {
         } else {
             documentTitles.forEach(System.out::println);
         }
-    }
-
-    /**
-     * Main method.
-     *
-     * @param args not used
-     */
-    public static void main(String[] args) {
-        new CLI().run();
     }
 }
